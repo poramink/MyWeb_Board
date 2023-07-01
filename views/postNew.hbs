@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+{{> baseHead customTitle='สร้างโพสใหม่ | '}}
+<body>
+    {{> siteHeader }}
+    <section class="section">
+        <div class="container">
+            <h2>สร้างโพสใหม่</h2>
+            <p class="mg-bt-large">สร้างเกี่ยวกับอะไร</p>
+            <form action="/p/new" method="post">
+                <p>
+                    <input type="text" name="title" placeholder="หัวข้อ" value="{{values.title}}">
+
+                </p>
+                <p>
+                    <textarea name="content" placeholder="เนื้อหา" rows="3">{{values.content}}</textarea>
+                </p>
+                <p>
+                    <input type="text" name="from" placeholder="จากใคร" value="{{values.from}}">
+                </p>
+                <p>
+                    <input id="input-accepted" type="checkbox" name="accepted">
+                    <label for="input-accepted">กดตรงนี้ด้วย</label>
+                </p>
+                <p>
+                    <button class="button" type="submit">สร้างโพส</button>
+                </p>
+                {{#if errorMessage}}
+                    <p>
+                        {{errorMessage}}
+                    </p>
+                {{/if}}
+            </form>
+        </div>
+    </section>
+    {{> siteFooter }}
+</body>
+</html>
+
+

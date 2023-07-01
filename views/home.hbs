@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+{{> baseHead }}
+<body>
+    {{> siteHeader }}
+    <section class="section">
+        <div class="container">
+            <h2>สวัสดี</h2>
+            <p class="mg-bt-large">ท่านอยากโพสสิ่งไหน สามารถโพสได้เลย...</p>
+            {{#each allPost}}
+                <div class="box">
+                    <h4><a href="/p/{{ this.id}}">{{ this.title }}</a></h4>
+                    <p>
+                        <span>{{ this.from }} | </span>
+                        <span class="text-gray">{{ this.createdAtText}}</span>
+
+                    </p>
+                    {{#if this.CommentCount }}
+                        <div>{{this.CommentCount}} คอมเมนต์</div>
+                    {{else}}
+                        <div>ยังไม่มีอะไร</div>
+                    {{/if}}
+                </div>
+            {{/each}}
+        </div>
+    </section>
+    {{> siteFooter }}
+    {{> siteScrollTop}}
+    {{> siteScripts}}
+</body>
+</html>
