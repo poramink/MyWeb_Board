@@ -55,7 +55,7 @@ router.post('/new', async(request, response) => {
 
     } catch (error) {
         console.error(error);
-        let errorMessage = 'ฉันผิดพลาดตรงไหน';
+        let errorMessage = 'ผิดพลาด';
         if (error.message === 'no text'){
             errorMessage = 'ใส่ให้ครบ'
         }
@@ -96,12 +96,12 @@ router.post('/:postId/comment', async(request,response) =>{
 
     } catch (error) {
         console.error(error);
-        let errorMessage = 'ฉันผิดพลาดตรงไหน';
+        let errorMessage = 'ผิดพลาด';
         if (error.message === 'no text'){
             errorMessage = 'ใส่ให้ครบ'
         }
         else if (error.message = 'no accepted'){
-            errorMessage = 'กดติ๊กยอมรับ';
+            errorMessage = 'กดยอมรับ';
         }
         const postData = await getPostAndComment(postId);
         return response.render('postid', { ...postData ,errorMessage, values:{content,from}});
