@@ -150,6 +150,7 @@ input[type='text']:focus, textarea:focus{
 .button.button-outline{
     color: rgb(1, 187, 1);
     background-color: white;
+
 }
 
 .button:hover{
@@ -222,4 +223,12 @@ input[type='text']:focus, textarea:focus{
     z-index: 10;
     cursor: pointer;
     user-select: none;
+}
+
+.background{
+    background-color: rgb(226, 207, 207);
+}
+
+.run{
+    color: rgb(255, 89, 0);
 }

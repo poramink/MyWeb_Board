@@ -3,27 +3,30 @@
 {{> baseHead }}
 <body>
     {{> siteHeader }}
-    <section class="section">
-        <div class="container">
-            <h2>ยินดีตอนรับสู่เว็บ FeelFriend</h2>
-            <p class="mg-bt-large">เพื่อนๆสนใจสิ่งไหน สามารถโพสในสิ่งนั้นได้เลย...</p>
-            {{#each allPost}}
-                <div class="box">
-                    <h4><a href="/p/{{ this.id}}">{{ this.title }}</a></h4>
-                    <p>
-                        <span>{{ this.from }} | </span>
-                        <span class="text-gray">{{ this.createdAtText}}</span>
+    <div class="background">
+        <section class="section">
+            <div class="container">
+                <h2>ยินดีตอนรับสู่เว็บ WebFriend</h2>
+                <p class="mg-bt-large">เพื่อนๆสนใจสิ่งไหน สามารถโพสในสิ่งนั้นได้เลย...</p>
+                {{#each allPost}}
+                    <div class="box">
+                        <h4><a href="/p/{{ this.id}}">{{ this.title }}</a></h4>
+                        <p>
+                            <span>{{ this.from }} | </span>
+                            <span class="text-gray">{{ this.createdAtText}}</span>
 
-                    </p>
-                    {{#if this.CommentCount }}
-                        <div>{{this.CommentCount}} คอมเมนต์</div>
-                    {{else}}
-                        <div>ยังไม่มีอะไร</div>
-                    {{/if}}
-                </div>
-            {{/each}}
-        </div>
-    </section>
+                        </p>
+                        {{#if this.CommentCount }}
+                            <div>{{this.CommentCount}} คอมเมนต์</div>
+                        {{else}}
+                            <div>ยังไม่มีอะไร</div>
+                        {{/if}}
+                    </div>
+                {{/each}}
+            </div>
+        </section>
+        <marquee behavior="alternate" class="run">ขอบคุณที่เข้ามาในเว็บของเราครับ</marquee>
+    </div>
     {{> siteFooter }}
     {{> siteScrollTop}}
     {{> siteScripts}}
